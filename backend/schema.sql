@@ -1,5 +1,13 @@
 -- Create tables for Asset Management System
 
+-- Drop existing tables to ensure clean slate (order matters due to foreign keys)
+DROP TABLE IF EXISTS public.bom CASCADE;
+DROP TABLE IF EXISTS public.transfers CASCADE;
+DROP TABLE IF EXISTS public.maintenance CASCADE;
+DROP TABLE IF EXISTS public.assets CASCADE;
+DROP TABLE IF EXISTS public.rigs CASCADE;
+DROP TABLE IF EXISTS public.users CASCADE;
+
 -- Assets Table
 CREATE TABLE IF NOT EXISTS public.assets (
     id SERIAL PRIMARY KEY,
