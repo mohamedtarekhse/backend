@@ -21,6 +21,19 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // --- ROUTES ---
 
+// Welcome route
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <body style="font-family:sans-serif; text-align:center; padding-top:50px;">
+        <h1>Asset Management API</h1>
+        <p>Status: <span style="color:green">Online</span></p>
+        <p>API Endpoint: <a href="/api/health">/api/health</a></p>
+      </body>
+    </html>
+  `);
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Backend is running' });
